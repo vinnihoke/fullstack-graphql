@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import gql from 'graphql-tag'
 import PetBox from '../components/PetBox'
 import NewPet from '../components/NewPet'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
 
-export default function Pets () {
+export default function Pets() {
   const [modal, setModal] = useState(false)
-  
+
   const onSubmit = input => {
     setModal(false)
   }
@@ -19,12 +19,12 @@ export default function Pets () {
       </div>
     </div>
   ))
-  
+
   if (modal) {
     return (
       <div className="row center-xs">
         <div className="col-xs-8">
-          <NewPet onSubmit={onSubmit} onCancel={() => setModal(false)}/>
+          <NewPet onSubmit={onSubmit} onCancel={() => setModal(false)} />
         </div>
       </div>
     )
