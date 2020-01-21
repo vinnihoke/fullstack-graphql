@@ -26,6 +26,11 @@ input PetInput {
 	type: String
 }
 
+input NewPetInput {
+	name: String!
+	type: String!
+}
+
 input ShoeInput {
 	brand: String
 	size: Int
@@ -35,6 +40,10 @@ type Query {
 	pets(input: PetInput): [Pet]!
 	shoes(input: ShoeInput): [Shoe]!
 	pet(input: PetInput): Pet
+}
+
+type Mutation {
+	pet(input: NewPetInput!): Pet!
 }
 `;
 
